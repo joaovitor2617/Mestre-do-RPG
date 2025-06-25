@@ -22,13 +22,17 @@ def exibir_menu():
         else:
             print('Opção inválida.\n')
 def cadastrar_personagem():
-    nome=str(input('Digite o nome do personagem: '))
-    classe=input('Qual a classe do personagem (Guerreiro, Mago, Arqueiro, Ladrão, Paladino e Druida): ')
+    nome = input('Digite o nome do personagem: ')
+    classe = input('Qual a classe do personagem (Guerreiro, Mago, Arqueiro, Ladrão, Paladino e Druida): ')
     try:
-        nivel=int(input('Qual o nível do personagem (1 a 5): '))
+        nivel = int(input('Qual o nível do personagem (1 a 5): '))
+        if nivel < 1 or nivel > 5:
+            print('Nível fora do permitido deve ser entre 1 e 5.\n')
+            return
     except ValueError:
-        print('Nível inválido.\n')
+        print('Digite um número inteiro.\n')
         return
+    print('Personagem cadastrado com sucesso!')
     habilidade=str(input('Qual é a habilidade especial (Fogo, Velocidade, Cura, Gelo, Invisibilidade): '))
     confirmar=str(input('Confirmar cadastro?(s/n): '))
     if confirmar.lower()=='s':
