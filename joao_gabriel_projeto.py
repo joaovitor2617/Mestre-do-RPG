@@ -2,11 +2,11 @@ personagens=[]
 def exibir_menu():
     while True:
         print('Menu sobre o personagem')
-        print('1. Cadastrar novo personagem')
-        print('2. Consultar personagens')
-        print('3. Buscar por classe')
-        print('4. Aumentar nível de um personagem')
-        print('5. Sair')
+        print('1- Cadastrar novo personagem')
+        print('2- Consultar personagens')
+        print('3- Buscar por classe')
+        print('4- Aumentar nível de um personagem')
+        print('5- Sair')
         escolha=str(input('Escolha uma opção: '))
         if escolha=='1':
             cadastrar_personagem()
@@ -42,11 +42,13 @@ def cadastrar_personagem():
     else:
         print('Cadastro cancelado.\n')
 def consultar_personagens():
-    if len(personagens) == 0:
-        print('Nenhum personagem cadastrado.\n')
+    if len(personagens) ==0:
+        print('Personagem cadastrado.\n')
         return
-    for i, personagem in enumerate(personagens, start=1):
-        print(f"[{i}] Nome:{personagem['Nome']}|Classe:{personagem['Classe']}|Nível:{personagem['Nível']}")
+    contador =1
+    for personagem in personagens:
+        print(f"[{contador}]Nome:{personagem['Nome']}|Classe:{personagem['Classe']}|Nível:{personagem['Nível']}")
+        contador +=1
     print()
 def buscar_por_classe():
     classe=str(input('Digite a classe que deseja buscar: '))
