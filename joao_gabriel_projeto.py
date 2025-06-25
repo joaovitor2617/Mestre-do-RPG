@@ -27,10 +27,10 @@ def cadastrar_personagem():
     try:
         nivel=int(input('Qual o nível do personagem (1 a 5): '))
     except ValueError:
-        print('Nível inválido. Cadastro cancelado.\n')
+        print('Nível inválido.\n')
         return
     habilidade=str(input('Qual é a habilidade especial (Fogo, Velocidade, Cura, Gelo, Invisibilidade): '))
-    confirmar=str(input('Confirmar cadastro? (s/n): '))
+    confirmar=str(input('Confirmar cadastro?(s/n): '))
     if confirmar.lower()=='s':
         personagem={
             'Nome':nome,
@@ -54,7 +54,7 @@ def buscar_por_classe():
     classe=str(input('Digite a classe que deseja buscar: '))
     achou=False
     for personagem in personagens:
-        if personagem['Classe'].lower() == classe.lower():
+        if personagem['Classe'].lower()==classe.lower():
             print(f'{personagem['Nome']} - Nível {personagem['Nível']} - Habilidade: {personagem['Habilidade']}')
             achou=True
     if not achou:
@@ -72,5 +72,5 @@ def aumentar_nivel_personagem():
         else:
             print('Número de personagem inválido.\n')
     except ValueError:
-        print('Entrada inválida. Use apenas números.\n')
+        print('Número invalido.\n')
 exibir_menu()
